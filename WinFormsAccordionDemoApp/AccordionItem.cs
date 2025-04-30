@@ -9,8 +9,13 @@ namespace WinFormsAccordionDemoApp
     public class AccordionItem
     {
         public Panel Panel { get; private set; }
+        public Panel HeaderPanel { get; private set; }
+        public Label TitleLabel { get; private set; }
         public Button HeaderButton { get; private set; }
         public PictureBox HeaderIcon { get; private set; }
+        public Button ExpandCollapseButton { get; private set; }
+        public Button EditButton { get; private set; }
+        public Button DeleteButton { get; private set; }
         private Panel ContentPanel;
         private Label ContentLabel;
         private bool isExpanded = false;
@@ -82,6 +87,85 @@ namespace WinFormsAccordionDemoApp
 
             Panel.Controls.Add(ContentPanel);
         }
+
+        //public AccordionItem(string title, string content)
+        //{
+        //    Panel = new Panel { Width = 600, AutoSize = true, AutoSizeMode = AutoSizeMode.GrowAndShrink };
+
+        //    HeaderPanel = new Panel { Height = 40, Dock = DockStyle.Top, BackColor = Color.LightSteelBlue };
+        //    HeaderPanel.Padding = new Padding(5, 5, 5, 5);
+        //    HeaderPanel.AutoSize = true;
+
+        //    TitleLabel = new Label
+        //    {
+        //        Text = title,
+        //        AutoSize = true,
+        //        TextAlign = ContentAlignment.MiddleLeft,
+        //        Dock = DockStyle.Fill,
+        //        Font = new Font("Segoe UI", 10, FontStyle.Bold)
+        //    };
+
+        //    ExpandCollapseButton = new Button
+        //    {
+        //        Image = expandIcon,
+        //        Size = new Size(32, 32),
+        //        FlatStyle = FlatStyle.Flat,
+        //        Dock = DockStyle.Right,
+        //        Margin = new Padding(0)
+        //    };
+        //    ExpandCollapseButton.FlatAppearance.BorderSize = 0;
+
+        //    EditButton = new Button
+        //    {
+        //        Text = "✎", // or use image
+        //        Size = new Size(32, 32),
+        //        FlatStyle = FlatStyle.Flat,
+        //        Dock = DockStyle.Right,
+        //        Margin = new Padding(0)
+        //    };
+        //    EditButton.FlatAppearance.BorderSize = 0;
+
+        //    DeleteButton = new Button
+        //    {
+        //        Text = "🗑", // or use image
+        //        Size = new Size(32, 32),
+        //        FlatStyle = FlatStyle.Flat,
+        //        Dock = DockStyle.Right,
+        //        Margin = new Padding(0)
+        //    };
+        //    DeleteButton.FlatAppearance.BorderSize = 0;
+
+        //    // Add buttons right-to-left
+        //    HeaderPanel.Controls.Add(ExpandCollapseButton);
+        //    HeaderPanel.Controls.Add(DeleteButton);
+        //    HeaderPanel.Controls.Add(EditButton);
+        //    HeaderPanel.Controls.Add(TitleLabel); // fills remaining space
+
+        //    ContentPanel = new Panel
+        //    {
+        //        Dock = DockStyle.Top,
+        //        Height = 100,
+        //        BackColor = Color.White,
+        //        Visible = false
+        //    };
+
+        //    var contentLabel = new Label
+        //    {
+        //        Text = content,
+        //        Dock = DockStyle.Fill,
+        //        Padding = new Padding(10)
+        //    };
+        //    ContentPanel.Controls.Add(contentLabel);
+
+        //    Panel.Controls.Add(ContentPanel);
+        //    Panel.Controls.Add(HeaderPanel);
+
+        //    // Events
+        //    ExpandCollapseButton.Click += (s, e) => Toggle();
+        //    // You can add:
+        //    // EditButton.Click += ...
+        //    // DeleteButton.Click += ...
+        //}
 
         public void Toggle()
         {
